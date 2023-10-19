@@ -55,11 +55,16 @@ int main(){
 			cout << endl;
 		}
 		//This prints out the product of matrix a and b.
+		int resultant[matrixSize][matrixSize];
 	cout << "\nMatrix Product (A * B): " << endl;
 		
 		for (int i =0; i < matrixSize; i++){
 			for (int j= 0; j < matrixSize; j++){
-				cout <<  matrixA[i][j] * matrixB[i][j] << " ";
+				resultant[i][j] =0;
+				for (int k =0; k < matrixSize; k++){
+					resultant[i][j] += matrixA[i][k] * matrixB[k][j];
+				}
+				cout << resultant[i][j] << " ";
 			}
 			cout << endl;
 		}
